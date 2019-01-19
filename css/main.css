@@ -1921,7 +1921,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #832278;
+  background: #ffffd5;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2901,11 +2901,11 @@ hr {
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
   background: #fff;
-  opacity: 0.95;
+  opacity: 0.9;
 }
 .post-color {
   background: #fffaf0;
-  opacity: 0.98;
+  opacity: 0.9;
 }
 span#busuanzi_container_site_uv {
   color: #fff;
@@ -2923,7 +2923,7 @@ span#busuanzi_container_site_pv,
 }
 .collection-title {
   background: #fff;
-  opacity: 0.95;
+  opacity: 0.9;
   width: 180px;
 }
 body {
