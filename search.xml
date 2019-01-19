@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[如何搭建JO厨的奇妙博客]]></title>
+    <url>%2F2019%2F01%2F19%2F%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAJO%E5%8E%A8%E7%9A%84%E5%A5%87%E5%A6%99%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[在一次突发奇想觉得该记录一下我做的各种事情后，便开始有了搭建一个博客的想法。 但是普通的主题或者其他的吧，就感觉挺没有逼格的，刚好记得有人说过可以用JOJO主题做博客，便疯狂百度如何用自定义自己的博客，历经各种意外事件最后好歹也算搭建起来了，搭建完确认无误之后第一件事那必是记录下搭建博客的整个过程。(不过刚好赶上报告的deadline，写报告加开会拖了好久) 前言，我不建议没有替身的人搭建主题博客，虽说过程不是很复杂，但是对于没有替身的人可能看着攻略也弄不好。]]></content>
+      <categories>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>奇妙的东西</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[UBUNTU16.04上的greenplum搭建]]></title>
+    <url>%2F2019%2F01%2F19%2FUBUNTU16-04%E4%B8%8A%E7%9A%84greenplum%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[环境准备4台ubuntu16.04 更改hostname，配置hosts实现hostname映射到ip地址，在后续配置文件中需要用hostname进行配置，为方便记忆，master的hostname为gp-master，segment的hostname为gp-segment1到gp-segment3 Master配置su进入root 更改主机名、配置hosts文件，通过主机名找到ip地址 echo &apos;gp-master&apos; &gt; /etc/hostname echo &apos;192.168.0.100 gp-master&apos; &gt; /etc/hosts echo &apos;192.168.0.101 gp-segment1&apos; &gt; /etc/hosts echo &apos;192.168.0.102 gp-segment2&apos; &gt; /etc/hosts echo &apos;192.168.0.103 gp-segment3&apos; &gt; /etc/hosts segement配置与master基本相同，其中 echo &apos;gp-master&apos; &gt; /etc/hostname 中的’gp-master’改为对应的segment1到3 新建用户这一步的意义在于之后的实现中需要在每台机子的相同位置创建一个文件夹用于存储，ubuntu的home路径其实为/home/用户名/… ,如果几台机子本来的用户名不同home路径就不同，则需要在系统根目录创建，根目录有权限限制，这样还需要多一步配置文件夹权限的步骤 master、segement操作相同adduser gpadmin echo &apos;gpadmin ALL=(ALL:ALL) ALL&apos; &gt;&gt; /etc/sudoers reboot 重启后登录新建的gpadmin su gpadmin 新建文件夹mastermkdir /gpmaster master、segmentmkdir /primary 安装master、segmentcd ~ sudo apt-get install python-software-properties sudo apt-get install software-properties-common sudo apt-get-repository ppa:greenplum/db sudo apt-get update sudo apt-get install greenplum-db-oss 秘钥交换之后的操作全在master进行打开一个新的命令窗，加载greenplum专用环境变量 source /opt/gpdb/greenplum_path.sh 创建主机列表文件 touch hostlist_singlenode echo &apos;gp-master&apos; &gt;&gt; hostlist_singlenode echo &apos;gp-segment1&apos; &gt;&gt; hostlist_singlenode echo &apos;gp-segment2&apos; &gt;&gt; hostlist_singlenode echo &apos;gp-segment3&apos; &gt;&gt; hostlist_singlenode 秘钥交换 gpssh-exkeys -f hostlist_singlenode 配置文件复制配置文件到/home目录 cd ~ cp $GPHOME/docs/cli_help/gpconfigs/gpinitsystem_singlenode . 使用gedit打开复制来的gpinitsystem_singlenode进行一下配置：MACHINE_LIST_FILE=./hostlist_singlenode declare -a DATA_DIRECTORY=(/home/gpadmin/primary) MASTER_HOSTNAME=gp-master MASTER_DIRECTORY=/home/gpadmin/gpmaster 上面的DATA_DIRECTORY就是之前说的要每台机子路径相同的数据存储文件夹，这里还有个骚用法可以用空格隔开写多个文件夹进去例如（/home/gpadmin/data1 /home/gpadmin/data2），这样每台机子的文件夹会翻倍，最后系统的节点也会翻倍，一般一个cpu设置 初始化回到秘钥交换时的命令窗口，输入 /opt/gpdb/bin/gpinitsystem -c gpinitsystem_singlenode 他会问是否继续，默认是否，输入y回车继续 也许会报错说环境变量没有MASTER_DATA_DIRECTORY，输入 export MASTER_DATA_DIRECTORY=/home/gpadmin/gpmaster/gpsne1 测试以下是官网的操作 creatdb demo psql demo create table foo(id int); insert into foo values(1); select * from foo; seletc * from gp_segment_configuration 使用每次打开新的命令窗，都需要重新引入环境变量 source /opt/gpdb/greenplum_path.sh export MASTER_DATA_DIRECTORY=/home/gpadmin/gpmaster/gpsne1 启动 gpstart登录 psql停止 gpstop更多操作建议百度]]></content>
+      <categories>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F01%2F16%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
