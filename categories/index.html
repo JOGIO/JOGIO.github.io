@@ -559,7 +559,16 @@
         <source src="/music/buzuorenl.m4a">
     </audio>
     <audio id="myaudio2" preload="preload">
-        <source src="/music/muda.mp3">
+        <source src="/music/mudamuda.m4a">
+    </audio>
+    <audio id="myaudio3" preload="preload">
+        <source src="/music/time.m4a">
+    </audio>
+    <audio id="myaudio4" preload="preload">
+        <source src="/music/awake.m4a">
+    </audio>
+    <audio id="myaudio5" preload="preload">
+        <source src="/music/theworld.m4a">
     </audio>
 <script type="text/javascript">
   var path = window.location.pathname
@@ -570,13 +579,21 @@
   else if(path != "/about/" && path.indexOf("/tags/") == -1 && path.indexOf("/categories/") == -1)
   {
       var a = Math.random();
-      if(a>0.5)
+      if(a<0.25)
       {
         document.getElementById('myaudio1').play();
       }
-      else
+      else if(a>=0.25 && a<0.5)
       {
         document.getElementById('myaudio2').play();
+      }
+      else if(a>=0.5 && a<0.75)
+      {
+        document.getElementById('myaudio4').play();
+      }
+      else if(a>=0.75)
+      {
+        document.getElementById('myaudio5').play();
       }
 
   }
@@ -677,10 +694,11 @@
 
 
 
-  
-  
 
 
+  
+  
+  <script id="ribbon" size="300" alpha="0.55" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 
 
 
@@ -694,12 +712,6 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/three/three.min.js"></script>
-
-  
-  <script src="/lib/three/canvas_sphere.min.js"></script>
 
 
   
