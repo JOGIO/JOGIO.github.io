@@ -1921,7 +1921,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffe9ff;
+  background: #71ff1c;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2043,7 +2043,7 @@ pre .javascript .function {
 }
 .footer {
   font-size: 14px;
-  color: #999;
+  font-color: #fff;
 }
 .footer img {
   border: none;
@@ -2333,9 +2333,6 @@ pre .javascript .function {
 }
 .category-all-page .category-list-item {
   margin: 5px 10px;
-}
-.category-all-page .category-list-count {
-  color: #bbb;
 }
 .category-all-page .category-list-count:before {
   display: inline;
@@ -2904,7 +2901,30 @@ hr {
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
   background: #fff;
-  opacity: 0.85;
+  opacity: 0.95;
+}
+.post-color {
+  background: #fffaf0;
+  opacity: 0.98;
+}
+span#busuanzi_container_site_uv {
+  color: #fff;
+}
+.post-meta-divider {
+  color: #fff;
+}
+span#busuanzi_container_site_pv,
+.author,
+.fa.fa-user-md {
+  color: #fff;
+}
+.archive-page-counter {
+  background: #fffaf0;
+}
+.collection-title {
+  background: #fff;
+  opacity: 0.95;
+  width: 180px;
 }
 body {
   background: url("/images/JOJO/66666.png");
