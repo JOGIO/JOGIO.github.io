@@ -668,13 +668,39 @@
 
 <a id="aa"></a>
 
-<script type="text/javascript">
-  
-  document.getElementById('aa').innerHTML=window.location.pathname;
-</script>
-  <audio id="bgMusic" preload="preload" autoplay="autoplay">
+
+
+
+    <audio id="bgMusic" preload="preload">
         <source src="http://m10.music.126.net/20190119141934/ba03fd8967fb26c98421ea3f30cb2c3d/ymusic/0e59/040e/045b/939b0dd5703d6467822931de9eb6ace4.mp3" type="audio/mp3">
     </audio>
+    <audio id="myaudio1" preload="preload">
+        <source src="/music/buzuorenl.m4a">
+    </audio>
+    <audio id="myaudio2" preload="preload">
+        <source src="/music/muda.mp3">
+    </audio>
+<script type="text/javascript">
+  var path = window.location.pathname
+  
+  if(path == '/'){
+    document.getElementById('bgMusic').play();
+  }
+  else if(path != "/about/" && path.indexOf("/tags/") == -1 && path.indexOf("/categories/") == -1)
+  {
+      var a = Math.random();
+      document.getElementById('aa').innerHTML=a;
+      if(a>0.5)
+      {
+        document.getElementById('myaudio1').play();
+      }
+      else
+      {
+        document.getElementById('myaudio2').play();
+      }
+
+  }
+</script>
 
 
 
