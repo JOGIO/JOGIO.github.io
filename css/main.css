@@ -1921,7 +1921,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffffd5;
+  background: #c1f60b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2925,6 +2925,9 @@ span#busuanzi_container_site_pv,
   background: #fff;
   opacity: 0.9;
   width: 180px;
+}
+div#comments.comments.v {
+  background: #fffaf0;
 }
 body {
   background: url("/images/JOJO/66666.png");

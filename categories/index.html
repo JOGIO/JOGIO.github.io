@@ -409,6 +409,10 @@
           
 
   
+    <div class="comments" id="comments">
+    </div>
+
+  
 
 
 
@@ -553,7 +557,7 @@
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     <audio id="bgMusic" preload="preload">
-        <source src="http://m10.music.126.net/20190119141934/ba03fd8967fb26c98421ea3f30cb2c3d/ymusic/0e59/040e/045b/939b0dd5703d6467822931de9eb6ace4.mp3" type="audio/mp3">
+        <source src="/music/oro.mp3">
     </audio>
     <audio id="myaudio1" preload="preload">
         <source src="/music/buzuorenl.m4a">
@@ -746,6 +750,37 @@
 
 
   
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.4/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'dkN4XunQwdazh80EKQqI40ac-gzGzoHsz',
+    appKey: 'Nsv404jVh2UNhhKeqX3F1YL4',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+</script>
+
+
 
 
   
