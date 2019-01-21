@@ -43,6 +43,32 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.useso.com/css?family=Georgia:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
 
 
 
@@ -683,6 +709,9 @@
     <audio id="bgMusic" preload="preload">
         <source src="/music/oro.mp3">
     </audio>
+    <audio id="bgMusic2" preload="preload">
+        <source src="/music/bgmusic2.mp3">
+    </audio>
     <audio id="myaudio1" preload="preload">
         <source src="/music/buzuorenl.m4a">
     </audio>
@@ -698,18 +727,40 @@
     <audio id="myaudio5" preload="preload">
         <source src="/music/theworld.m4a">
     </audio>
+    <audio id="myaudio6" preload="preload">
+        <source src="/music/konodioda.m4a">
+    </audio>
+    <audio id="myaudio7" preload="preload">
+        <source src="/music/oulaheartattack.m4a">
+    </audio>
+    <audio id="myaudio8" preload="preload">
+        <source src="/music/starworld.m4a">
+    </audio>
+    <audio id="myaudio9" preload="preload">
+        <source src="/music/oulaa.m4a">
+    </audio>
 <script type="text/javascript">
   var path = window.location.pathname
   
   if(path == '/'){
-    document.getElementById('bgMusic').play();
+    var a = Math.random();
+    if(a<0.5){document.getElementById('bgMusic').play();}
+    else{document.getElementById('bgMusic2').play();}
+    
+    
   }
-  else if(path != "/about/" && path.indexOf("/tags/") == -1 && path.indexOf("/categories/") == -1)
+  else if(path == "/about/")
+  {
+    var a = Math.random();
+    if(a<0.5){document.getElementById('myaudio1').play();}
+    else{document.getElementById('myaudio6').play();}
+  }
+  else if(path.indexOf("/tags/") == -1 && path.indexOf("/archives/") == -1 &&path.indexOf("/categories/") == -1)
   {
       var a = Math.random();
       if(a<0.25)
       {
-        document.getElementById('myaudio1').play();
+        document.getElementById('myaudio8').play();
       }
       else if(a>=0.25 && a<0.5)
       {
@@ -717,7 +768,7 @@
       }
       else if(a>=0.5 && a<0.75)
       {
-        document.getElementById('myaudio4').play();
+        document.getElementById('myaudio7').play();
       }
       else if(a>=0.75)
       {
