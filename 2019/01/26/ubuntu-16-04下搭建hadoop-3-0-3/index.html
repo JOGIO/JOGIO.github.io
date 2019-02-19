@@ -135,25 +135,24 @@
 
 
 
-  <meta name="description" content="前言在一次突发奇想觉得该记录一下我做的各种事情后，便开始有了搭建一个博客的想法。 但是普通的主题或者其他的吧，就感觉挺没有逼格的，刚好记得有人说过可以用JOJO主题做博客，便疯狂百度如何用自定义自己的博客，历经各种意外事件最后好歹也算搭建起来了，搭建完确认无误之后第一件事那必是记录下搭建博客的整个过程。(不过刚好赶上报告的deadline，写报告加开会拖了好久) 前言，我不建议没有替身的人搭建主题">
-<meta name="keywords" content="奇妙的东西">
+  <meta name="description" content="大数据平台搭建踩坑第二弹，Hadoop平台搭建，2.x版本已经有很多教程了，3.0以上版本加入了新特性猛得一匹，所以就来踩踩坑吧——Hadoop3.0.3搭建 安装环境UBUNTU 16.04 虚拟机4台，一台master，三台segment，以下都是在greenplum搭建的第二步集群配置的基础上进行的 JDK安装这一步在所有虚拟机上操作都是一样的 -下载安装添加ppa并安装java1.8 su">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何搭建JO厨的奇妙博客">
-<meta property="og:url" content="http://yoursite.com/2019/01/19/如何搭建JO厨的奇妙博客/index.html">
+<meta property="og:title" content="ubuntu 16.04下搭建hadoop-3.0.3">
+<meta property="og:url" content="http://yoursite.com/2019/01/26/ubuntu-16-04下搭建hadoop-3-0-3/index.html">
 <meta property="og:site_name" content="JOGIO的奇妙冒险">
-<meta property="og:description" content="前言在一次突发奇想觉得该记录一下我做的各种事情后，便开始有了搭建一个博客的想法。 但是普通的主题或者其他的吧，就感觉挺没有逼格的，刚好记得有人说过可以用JOJO主题做博客，便疯狂百度如何用自定义自己的博客，历经各种意外事件最后好歹也算搭建起来了，搭建完确认无误之后第一件事那必是记录下搭建博客的整个过程。(不过刚好赶上报告的deadline，写报告加开会拖了好久) 前言，我不建议没有替身的人搭建主题">
+<meta property="og:description" content="大数据平台搭建踩坑第二弹，Hadoop平台搭建，2.x版本已经有很多教程了，3.0以上版本加入了新特性猛得一匹，所以就来踩踩坑吧——Hadoop3.0.3搭建 安装环境UBUNTU 16.04 虚拟机4台，一台master，三台segment，以下都是在greenplum搭建的第二步集群配置的基础上进行的 JDK安装这一步在所有虚拟机上操作都是一样的 -下载安装添加ppa并安装java1.8 su">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-21T15:43:00.673Z">
+<meta property="og:updated_time" content="2019-01-26T14:21:54.141Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何搭建JO厨的奇妙博客">
-<meta name="twitter:description" content="前言在一次突发奇想觉得该记录一下我做的各种事情后，便开始有了搭建一个博客的想法。 但是普通的主题或者其他的吧，就感觉挺没有逼格的，刚好记得有人说过可以用JOJO主题做博客，便疯狂百度如何用自定义自己的博客，历经各种意外事件最后好歹也算搭建起来了，搭建完确认无误之后第一件事那必是记录下搭建博客的整个过程。(不过刚好赶上报告的deadline，写报告加开会拖了好久) 前言，我不建议没有替身的人搭建主题">
+<meta name="twitter:title" content="ubuntu 16.04下搭建hadoop-3.0.3">
+<meta name="twitter:description" content="大数据平台搭建踩坑第二弹，Hadoop平台搭建，2.x版本已经有很多教程了，3.0以上版本加入了新特性猛得一匹，所以就来踩踩坑吧——Hadoop3.0.3搭建 安装环境UBUNTU 16.04 虚拟机4台，一台master，三台segment，以下都是在greenplum搭建的第二步集群配置的基础上进行的 JDK安装这一步在所有虚拟机上操作都是一样的 -下载安装添加ppa并安装java1.8 su">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/19/如何搭建JO厨的奇妙博客/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/26/ubuntu-16-04下搭建hadoop-3-0-3/">
 
 
 
@@ -163,7 +162,7 @@
   };
 </script>
 
-  <title>如何搭建JO厨的奇妙博客 | JOGIO的奇妙冒险</title>
+  <title>ubuntu 16.04下搭建hadoop-3.0.3 | JOGIO的奇妙冒险</title>
   
 
 
@@ -374,7 +373,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/19/如何搭建JO厨的奇妙博客/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/26/ubuntu-16-04下搭建hadoop-3-0-3/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JO GIO">
@@ -391,7 +390,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何搭建JO厨的奇妙博客
+          <h1 class="post-title" itemprop="name headline">ubuntu 16.04下搭建hadoop-3.0.3
 
               
             
@@ -417,46 +416,16 @@
                 
               
 
-              <time title="创建时间：2019-01-19 16:48:42" itemprop="dateCreated datePublished" datetime="2019-01-19T16:48:42+08:00">2019-01-19</time>
+              <time title="创建时间：2019-01-26 17:05:51 / 修改时间：22:21:54" itemprop="dateCreated datePublished" datetime="2019-01-26T17:05:51+08:00">2019-01-26</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-21 23:43:00" itemprop="dateModified" datetime="2019-01-21T23:43:00+08:00">2019-01-21</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/环境搭建/" itemprop="url" rel="index"><span itemprop="name">环境搭建</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -469,8 +438,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/2019/01/19/如何搭建JO厨的奇妙博客/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/19/如何搭建JO厨的奇妙博客/" itemprop="commentCount"></span>
+                <a href="/2019/01/26/ubuntu-16-04下搭建hadoop-3-0-3/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/26/ubuntu-16-04下搭建hadoop-3-0-3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -498,11 +467,126 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在一次突发奇想觉得该记录一下我做的各种事情后，便开始有了搭建一个博客的想法。</p>
-<p>但是普通的主题或者其他的吧，就感觉挺没有逼格的，刚好记得有人说过可以用JOJO主题做博客，便疯狂百度如何用自定义自己的博客，历经各种意外事件最后好歹也算搭建起来了，搭建完确认无误之后第一件事那必是记录下搭建博客的整个过程。(不过刚好赶上报告的deadline，写报告加开会拖了好久)</p>
-<p>前言，我不建议没有替身的人搭建主题博客，虽说过程不是很复杂，但是对于没有替身的人可能看着攻略也弄不好。</p>
-<p>先把坑留好吧，以后再慢慢填。</p>
-<h1 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h1><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1>
+        <p>大数据平台搭建踩坑第二弹，Hadoop平台搭建，2.x版本已经有很多教程了，3.0以上版本加入了新特性猛得一匹，所以就来踩踩坑吧——Hadoop3.0.3搭建</p>
+<h1 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h1><p>UBUNTU 16.04 虚拟机4台，一台master，三台segment，以下都是在<a href="https://jogio.github.io/2019/01/19/UBUNTU16-04%E4%B8%8A%E7%9A%84greenplum%E6%90%AD%E5%BB%BA/http://example.com" target="_blank" rel="noopener">greenplum搭建</a>的第二步集群配置的基础上进行的</p>
+<h1 id="JDK安装"><a href="#JDK安装" class="headerlink" title="JDK安装"></a>JDK安装</h1><p>这一步在所有虚拟机上操作都是一样的</p>
+<h2 id="下载安装"><a href="#下载安装" class="headerlink" title="-下载安装"></a>-下载安装</h2><p>添加ppa并安装java1.8</p>
+<pre><code>sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer　　
+</code></pre><p>完成后java -version查看是否成功</p>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="-环境配置"></a>-环境配置</h2><p>使用apt-get下载得扎瓦需要自己去找一下他的位置，一般在/usr/lib/jvm文件夹下，java的文件夹名看自己的，我的是java-8-oracle</p>
+<p>打开终端</p>
+<pre><code>sudo gedit /etc/profile
+</code></pre><p>加上下面几句话</p>
+<pre><code>export JAVA_HOME=/usr/lib/jvm/java-8-oralce
+export JRE_HOME=${JAVA_HOME}/jre   
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
+export PATH=${JAVA_HOME}/bin:$PATH
+</code></pre><p>保存退出 source /etc/profile就ok了</p>
+<h1 id="Hadoop3-0-3"><a href="#Hadoop3-0-3" class="headerlink" title="Hadoop3.0.3"></a>Hadoop3.0.3</h1><p>以下步骤先在master上进行，完成后将文件夹拷贝到其他机器即可</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="-下载"></a>-下载</h2><p>我的用户名为gpadmin，在/home/gpadmin/文件夹下新建文件夹local</p>
+<pre><code>cd /home/gpadmin
+mkdir local
+</code></pre><p>下载镜像</p>
+<pre><code>wget http://mirror.bit.edu.cn/apache/hadoop/common/hadoop-3.0.3/hadoop-3.0.3.tar.gz
+</code></pre><p>原地解压</p>
+<pre><code>tar zxvf hadoop-3.0.3.tar.gz
+</code></pre><p>或者双击打开拖出来</p>
+<h2 id="文件配置"><a href="#文件配置" class="headerlink" title="-文件配置"></a>-文件配置</h2><p>进入/home/gpadmin/hadoop-3.0.3/etc文件夹下，配置文件全在这里</p>
+<h3 id="—core-site-xml"><a href="#—core-site-xml" class="headerlink" title="—core-site.xml"></a>—core-site.xml</h3><p>用sudo gedit core-site.xml或者双击打开<br>配置如下</p>
+<pre><code>&lt;configuration&gt;
+&lt;property&gt;
+    &lt;name&gt;fs.default.name&lt;/name&gt;
+    &lt;value&gt;hdfs://master:9000&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+    &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+    &lt;value&gt;/home/hadoop3/tmp&lt;/value&gt;
+&lt;/configuration&gt;
+</code></pre><p>其中master为hostname</p>
+<h3 id="—hdfs-site-xml"><a href="#—hdfs-site-xml" class="headerlink" title="—hdfs-site.xml"></a>—hdfs-site.xml</h3><p>配置如下</p>
+<pre><code>&lt;configuration&gt;
+&lt;property&gt;
+    &lt;name&gt;dfs.replication&lt;/name&gt;
+    &lt;value&gt;4&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+    &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;
+    &lt;value&gt;/home/hadoop3/hdfs/name&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+    &lt;name&gt;dfs.namenode.data.dir&lt;/name&gt;
+    &lt;value&gt;/home/hadoop3/hdfs/data&lt;/value&gt;
+&lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre><h3 id="—mapred-site-xml"><a href="#—mapred-site-xml" class="headerlink" title="—mapred-site.xml"></a>—mapred-site.xml</h3><pre><code>&lt;configuration&gt;
+&lt;property&gt;
+    &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+    &lt;value&gt;yarn&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+    &lt;name&gt;mapreduce.application.classpath&lt;/name&gt;
+    &lt;value&gt;
+        /usr/local/hadoop3/etc/hadoop,
+        /usr/local/hadoop3/share/hadoop/common/*,
+        /usr/local/hadoop3/share/hadoop/common/lib/*,
+        /usr/local/hadoop3/share/hadoop/hdfs/*,
+        /usr/local/hadoop3/share/hadoop/hdfs/lib/*,
+        /usr/local/hadoop3/share/hadoop/mapreduce/*,
+        /usr/local/hadoop3/share/hadoop/mapreduce/lib/*,
+        /usr/local/hadoop3/share/hadoop/yarn/*,
+        /usr/local/hadoop3/share/hadoop/yarn/lib/*
+    &lt;/value&gt;
+&lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre><h3 id="—yarn-site-xml"><a href="#—yarn-site-xml" class="headerlink" title="—yarn-site.xml"></a>—yarn-site.xml</h3><pre><code>&lt;configuration&gt;
+&lt;!-- Site specific YARN configuration properties --&gt;
+&lt;property&gt;
+    &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+    &lt;value&gt;ha01&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+&lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre><h3 id="—workers"><a href="#—workers" class="headerlink" title="—workers"></a>—workers</h3><p>添加从机得hostname,稍后会配置</p>
+<pre><code>segment1
+segment2
+segment3
+</code></pre><h3 id="—hadoop-env-sh"><a href="#—hadoop-env-sh" class="headerlink" title="—hadoop-env.sh"></a>—hadoop-env.sh</h3><p>JAVA_HOME=/usr/lib/jvm/java-8-oracle</p>
+<h3 id="—环境变量"><a href="#—环境变量" class="headerlink" title="—环境变量"></a>—环境变量</h3><p>sudo gedit /etc/profile编辑环境变量<br>export HADOOP_HOME=/home/hadoop/hadoop3.03<br>export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH</p>
+<p>source /etc/profile生效</p>
+<h2 id="拷贝分发"><a href="#拷贝分发" class="headerlink" title="-拷贝分发"></a>-拷贝分发</h2><p>使用scp命令scp -r 源地址 目的地址<br>在master机器的/home/gpadmin/local文件夹下打开终端</p>
+<pre><code>scp -r hadoop-3.0.3 gpadmin@segment1:/home/gpadmin/local
+scp -r hadoop-3.0.3 gpadmin@segment2:/home/gpadmin/local
+scp -r hadoop-3.0.3 gpadmin@segment3:/home/gpadmin/local
+</code></pre><h1 id="免密ssh登陆配置"><a href="#免密ssh登陆配置" class="headerlink" title="免密ssh登陆配置"></a>免密ssh登陆配置</h1><p>这里有一个带坑 hadoop3.0以上的版本需要在root权限下进行运行，否则会出现 namenode can only be executred by root 。<br>ssh和普通用户的ssh是分开的，普通用户就在/home/用户名/.ssh下，root用户在/root/.ssh下。</p>
+<h2 id="生成密钥"><a href="#生成密钥" class="headerlink" title="-生成密钥"></a>-生成密钥</h2><p>在master打开终端su进root</p>
+<pre><code>apt-get install ssh
+cd /root/.ssh
+ssh-keygen -t rsa -P &apos;&apos;
+</code></pre><p>如果没有authorized_keys文件就touch authorized_keys新建一个<br>之后继续把公钥加入authorized——keys    </p>
+<pre><code>cat id_rsa.pub &gt;&gt; authorized_keys
+</code></pre><p>验证是否成功</p>
+<pre><code>ssh localhost
+</code></pre><p>在每台机器上重复以上步骤</p>
+<p><font color="red">这里又有一个带坑，如果root的ssh登陆显示permission denied, please try again则需要sudo gedit /etc/ssh/sshd_config,把PermitRootLogin without-password 改为PermitRootLogin yes</font></p>
+<h2 id="交换密钥"><a href="#交换密钥" class="headerlink" title="-交换密钥"></a>-交换密钥</h2><p>在master打开终端su进root，用以下语句把master的公钥发送到segment下，并重命名为master.pub</p>
+<pre><code>scp /root/.ssh/ida_rsa.pub root@segment1:/root/.ssh/master.pub
+scp /root/.ssh/ida_rsa.pub root@segment2:/root/.ssh/master.pub
+scp /root/.ssh/ida_rsa.pub root@segment3:/root/.ssh/master.pub
+</code></pre><p>分别在每台segment机上打开终端，可以直接打开虚拟机，也可以在master机上 ssh segment1登陆上去进行操作</p>
+<pre><code>su
+cd /root/.ssh
+cat master.pub &gt;&gt; authorized_keys
+</code></pre><p>这样就把master的公钥加入到segment的授权名单里了，理论上master就可以免密登陆segment了。</p>
+<h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>在hadoop-3.0.3文件夹下打开终端su成root</p>
+<pre><code>./bin/hdfs namenode -format
+./sbin/start-dfs.sh
+</code></pre><p>之后就能登陆localhost:8088和9870查看了</p>
+
       
     </div>
 
@@ -523,12 +607,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/奇妙的东西/" rel="tag"># 奇妙的东西</a>
-          
-        </div>
-      
 
       
       
@@ -538,8 +616,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/19/UBUNTU16-04上的greenplum搭建/" rel="next" title="UBUNTU16.04上的greenplum搭建">
-                <i class="fa fa-chevron-left"></i> UBUNTU16.04上的greenplum搭建
+              <a href="/2019/01/19/如何搭建JO厨的奇妙博客/" rel="next" title="如何搭建JO厨的奇妙博客">
+                <i class="fa fa-chevron-left"></i> 如何搭建JO厨的奇妙博客
               </a>
             
           </div>
@@ -547,10 +625,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/26/ubuntu-16-04下搭建hadoop-3-0-3/" rel="prev" title="ubuntu 16.04下搭建hadoop-3.0.3">
-                ubuntu 16.04下搭建hadoop-3.0.3 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -724,7 +798,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#音乐"><span class="nav-number">2.</span> <span class="nav-text">音乐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景"><span class="nav-number">3.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字体"><span class="nav-number">4.</span> <span class="nav-text">字体</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装环境"><span class="nav-number">1.</span> <span class="nav-text">安装环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK安装"><span class="nav-number">2.</span> <span class="nav-text">JDK安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载安装"><span class="nav-number">2.1.</span> <span class="nav-text">-下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境配置"><span class="nav-number">2.2.</span> <span class="nav-text">-环境配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop3-0-3"><span class="nav-number">3.</span> <span class="nav-text">Hadoop3.0.3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">3.1.</span> <span class="nav-text">-下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件配置"><span class="nav-number">3.2.</span> <span class="nav-text">-文件配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#—core-site-xml"><span class="nav-number">3.2.1.</span> <span class="nav-text">—core-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#—hdfs-site-xml"><span class="nav-number">3.2.2.</span> <span class="nav-text">—hdfs-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#—mapred-site-xml"><span class="nav-number">3.2.3.</span> <span class="nav-text">—mapred-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#—yarn-site-xml"><span class="nav-number">3.2.4.</span> <span class="nav-text">—yarn-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#—workers"><span class="nav-number">3.2.5.</span> <span class="nav-text">—workers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#—hadoop-env-sh"><span class="nav-number">3.2.6.</span> <span class="nav-text">—hadoop-env.sh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#—环境变量"><span class="nav-number">3.2.7.</span> <span class="nav-text">—环境变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拷贝分发"><span class="nav-number">3.3.</span> <span class="nav-text">-拷贝分发</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#免密ssh登陆配置"><span class="nav-number">4.</span> <span class="nav-text">免密ssh登陆配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成密钥"><span class="nav-number">4.1.</span> <span class="nav-text">-生成密钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交换密钥"><span class="nav-number">4.2.</span> <span class="nav-text">-交换密钥</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启动"><span class="nav-number">5.</span> <span class="nav-text">启动</span></a></li></ol></div>
             
 
           </div>
