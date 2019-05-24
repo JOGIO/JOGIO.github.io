@@ -722,6 +722,9 @@
     <audio id="myaudio9" preload="preload">
         <source src="/music/oulaa.m4a">
     </audio>
+    <audio id="myaudio10" preload="preload">
+        <source src="/music/8muda.m4a">
+    </audio>
 <script type="text/javascript">
   var path = window.location.pathname
   
@@ -741,21 +744,25 @@
   else if(path.indexOf("/tags/") == -1 && path.indexOf("/archives/") == -1 &&path.indexOf("/categories/") == -1)
   {
       var a = Math.random();
-      if(a<0.25)
+      if(a<0.2)
       {
         document.getElementById('myaudio8').play();
       }
-      else if(a>=0.25 && a<0.5)
+      else if(a>=0.2 && a<0.4)
       {
         document.getElementById('myaudio2').play();
       }
-      else if(a>=0.5 && a<0.75)
+      else if(a>=0.4 && a<0.6)
       {
         document.getElementById('myaudio7').play();
       }
-      else if(a>=0.75)
+      else if(a>=0.6 && a<0.8)
       {
         document.getElementById('myaudio5').play();
+      }
+      else if(a>=0.8)
+      {
+        document.getElementById('myaudio10').play();
       }
 
   }
